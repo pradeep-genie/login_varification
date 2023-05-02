@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OtpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,7 @@ Route::post('/verified',[UserController::class,'verifiedOtp'])->name('verifiedOt
 Route::get('/dashboard',[UserController::class,'loadDashboard']);
 
 Route::get('/resend-otp',[UserController::class,'resendOtp'])->name('resendOtp');
+
+
+Route::get('/sendotp',[OtpController::class,'index']);
+Route::post('/validateotp',[OtpController::class,'sendOtp'])->name('validateOtp');
